@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://10.0.0.94:8000/api/v1.0/get_container_for_user?username=running
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '91'
+      Server:
+      - Werkzeug/0.11.5 Python/2.7.6
+      Date:
+      - Fri, 22 Apr 2016 22:06:02 GMT
+    body:
+      encoding: US-ASCII
+      string: "{\n  \"container_name\": \"chorus_notebook.tmp.running\", \n  \"port\"\
+        : 13726, \n  \"running\": true\n}"
+    http_version:
+  recorded_at: Fri, 22 Apr 2016 22:06:02 GMT
+- request:
+    method: post
+    uri: http://10.0.0.94:8000/api/v1.0/stop_notebook_docker_container
+    body:
+      encoding: US-ASCII
+      string: username=running
+    headers:
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 202
+      message: ACCEPTED
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '55'
+      Server:
+      - Werkzeug/0.11.5 Python/2.7.6
+      Date:
+      - Fri, 22 Apr 2016 22:06:02 GMT
+    body:
+      encoding: US-ASCII
+      string: |-
+        {
+          "container_name": "chorus_notebook.tmp.running\n"
+        }
+    http_version:
+  recorded_at: Fri, 22 Apr 2016 22:06:02 GMT
+- request:
+    method: post
+    uri: http://10.0.0.94:8000/api/v1.0/run_notebook_in_docker
+    body:
+      encoding: US-ASCII
+      string: username=running&chorus_address=&command=jupyter%20notebook%20--config%3Dchorus_notebook_config.py&image_name=alpinedata%2Fchorus_commander
+    headers:
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '71'
+      Server:
+      - Werkzeug/0.11.5 Python/2.7.6
+      Date:
+      - Fri, 22 Apr 2016 22:06:02 GMT
+    body:
+      encoding: US-ASCII
+      string: "{\n  \"container_name\": \"chorus_notebook.tmp.running\", \n  \"port\"\
+        : 12016\n}"
+    http_version:
+  recorded_at: Fri, 22 Apr 2016 22:06:02 GMT
+recorded_with: VCR 3.0.1
