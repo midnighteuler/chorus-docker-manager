@@ -24,8 +24,7 @@ module ChorusDockerManager
     end
 
     def has_running_container(username)
-      response = HTTParty.get("#{server_url}/api/v1.0/get_container_for_user?username=#{username}",
-                              timeout: @timeout)
+      response = HTTParty.get("#{server_url}/api/v1.0/get_container_for_user?username=#{username}", { :timeout => @timeout })
 
       return response
     rescue Exception => e

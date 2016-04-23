@@ -14,16 +14,19 @@ t = ChorusDockerManager::Api.new({
 puts t
 puts t.server_url
 puts "Seeing if 'mike' has a container:"
-puts t.has_running_container('mike')
+puts t.has_running_container('1')
 
 puts "Creating a container for mike:"
-puts t.create_container('mike')
+puts t.create_container('1')
+
+puts "Destroying container:"
+puts t.destroy_container('1')
 
 puts "Seeing if 'mike' has a container:"
-puts t.has_running_container('mike')
+puts t.has_running_container('1')
 
-puts "Destroying container for mike:"
-puts t.destroy_container('mike')
-
-puts "Seeing if 'mike' has a container:"
-puts t.has_running_container('mike')
+#puts "Destroying container for mike:"
+#puts t.destroy_container('mike')
+#
+#puts "Seeing if 'mike' has a container:"
+#puts t.has_running_container('mike')
