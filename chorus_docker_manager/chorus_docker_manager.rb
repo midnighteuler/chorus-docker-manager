@@ -1,2 +1,2 @@
-require_relative './implementation/exceptions'
-require_relative './implementation/api'
+require_relative './docker_manager_exceptions'
+require_relative './docker_manager_api'

@@ -5,8 +5,8 @@ gem 'minitest'
 require 'minitest/autorun'
 require 'webmock/minitest'
 require 'vcr'
-require '../chorus_docker_manager/implementation/interface.rb'
-require '../chorus_docker_manager/implementation/api.rb'
+require '../chorus_docker_manager/docker_manager_api_interface.rb'
+require '../chorus_docker_manager/docker_manager_api.rb'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'

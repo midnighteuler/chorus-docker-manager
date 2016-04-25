@@ -1,7 +1,7 @@
 require 'httparty'
 #require 'uri'
-require_relative 'interface'
-require_relative 'exceptions'
+require_relative 'docker_manager_api_interface'
+require_relative 'docker_manager_exceptions'
 
 module ChorusDockerManager
   class Api < ChorusDockerManager::ApiInterface
